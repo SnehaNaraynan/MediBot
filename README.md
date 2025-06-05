@@ -20,18 +20,26 @@ System Architecture
 
 1. Data Processing (database.py)
 >Loads medical PDFs
+
 >Splits text into overlapping chunks
+
 >Generates sentence-transformer embeddings
+
 >Saves them into a FAISS vector store
 
 3. Backend Logic (llm_data_connect.py)
 >Loads vector database
+
 >Retrieves top relevant text chunks based on user query
+
 >Structures a prompt with context using LangChain
+
 >Sends the prompt to Claude via AWS Bedrock for response generation
 
 4. Frontend Interface (medibot.py)
 >Built in Streamlit
+
 >Provides a chat UI with support for topic shortcuts and live history
+
 >Handles conversation flow, prompt submission, and response display
 
