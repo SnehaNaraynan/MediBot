@@ -18,17 +18,19 @@ RAG architecture for combining retrieved knowledge with LLM response generation
 Pre-indexed data from vetted sources like medical encyclopedias and symptom guides
 System Architecture
 
-Data Processing (database.py)
+1. Data Processing (database.py)
 Loads medical PDFs
 Splits text into overlapping chunks
 Generates sentence-transformer embeddings
 Saves them into a FAISS vector store
-Backend Logic (llm_data_connect.py)
+
+3. Backend Logic (llm_data_connect.py)
 Loads vector database
 Retrieves top relevant text chunks based on user query
 Structures a prompt with context using LangChain
 Sends the prompt to Claude via AWS Bedrock for response generation
-Frontend Interface (medibot.py)
+
+4. Frontend Interface (medibot.py)
 Built in Streamlit
 Provides a chat UI with support for topic shortcuts and live history
 Handles conversation flow, prompt submission, and response display
